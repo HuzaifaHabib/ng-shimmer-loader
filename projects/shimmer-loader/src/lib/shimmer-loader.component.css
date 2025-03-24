@@ -1,0 +1,14 @@
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer {
+    background-size: 200% 100%;
+    animation: shimmer var(--animation-duration, 1.5s) infinite;
+}
