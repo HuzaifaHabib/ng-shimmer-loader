@@ -2,7 +2,11 @@
   "name": "ng-shimmer-loader",
   "version": "0.0.1",
   "description": "A shimmer loader component for Angular",
-  "author": "Huzaifa Habib <huzaifa.dj@gmail.com>",
+  "author": {
+    "name": "Huzaifa Habib",
+    "email": "huzaifa.dj@gmail.com",
+    "url": "https://github.com/HuzaifaHabib"
+  },
   "license": "MIT",
   "scripts": {
     "ng": "ng",

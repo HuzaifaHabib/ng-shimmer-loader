@@ -1,59 +1,165 @@
-# NgShimmerLoader
+# 🚀 ng-shimmer-loader
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+**A lightweight Angular library to display a shimmer loading effect in your components.**  
+Easily create elegant shimmer placeholders while your content loads.
 
-## Development server
+<!-- ![Shimmer Loader Demo](https://raw.githubusercontent.com/your-repo-url/demo.gif) -->
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## 📦 Installation
+
+You can install the package using **npm**:
+
+```sh
+npm install ng-shimmer-loader
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Or using **yarn**:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```sh
+yarn add ng-shimmer-loader
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## 🛠️ Usage
+
+### **Import in Your Angular Module**
+
+If your project uses **NgModules**, import `ShimmerLoaderModule`:
+
+```ts
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppComponent } from "./app.component";
+import { ShimmerLoaderModule } from "ng-shimmer-loader";
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, ShimmerLoaderModule],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
 ```
 
-## Building
+For **Standalone Components**, directly import `ShimmerLoaderComponent`:
 
-To build the project run:
+```ts
+import { Component } from "@angular/core";
+import { ShimmerLoaderComponent } from "ng-shimmer-loader";
 
-```bash
-ng build
+@Component({
+  selector: "app-root",
+  standalone: true,
+  imports: [ShimmerLoaderComponent],
+  template: ` <ng-shimmer-loader width="100px" height="20px"></ng-shimmer-loader> `,
+})
+export class AppComponent {}
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🎨 Customization
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+You can customize the shimmer loader using the following **inputs**:
 
-```bash
-ng test
+| Input Property      | Type     | Default Value | Description                           |
+| ------------------- | -------- | ------------- | ------------------------------------- |
+| `width`             | `string` | `"100%"`      | Sets the width of the shimmer loader  |
+| `height`            | `string` | `"20px"`      | Sets the height of the shimmer loader |
+| `borderRadius`      | `string` | `"4px"`       | Rounds the corners of the loader      |
+| `animationDuration` | `string` | `"1.5s"`      | Controls shimmer animation speed      |
+| `className`         | `string` | `""`          | Custom class for additional styling   |
+
+### **Example Usage with Custom Styles**
+
+```html
+<ng-shimmer-loader width="200px" height="50px" borderRadius="8px" animationDuration="2s" className="custom-shimmer"> </ng-shimmer-loader>
 ```
 
-## Running end-to-end tests
+### **Custom Styles (CSS)**
 
-For end-to-end (e2e) testing, run:
+You can apply your own styles using the `className` input:
 
-```bash
-ng e2e
+```css
+.custom-shimmer {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🏗️ Development & Contribution
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### **1. Clone the Repository**
+
+```sh
+git clone https://github.com/your-github/ng-shimmer-loader.git
+cd ng-shimmer-loader
+```
+
+### **2. Install Dependencies**
+
+```sh
+npm install
+```
+
+### **3. Build the Library**
+
+```sh
+ng build shimmer-loader
+```
+
+### **4. Test Locally Before Publishing**
+
+To test the package in another Angular project:
+
+```sh
+cd dist/shimmer-loader
+npm link
+```
+
+In your test project:
+
+```sh
+npm link shimmer-loader
+```
+
+### **5. Unlink After Testing**
+
+```sh
+npm unlink shimmer-loader
+npm install
+```
+
+---
+
+## 📢 Contributing
+
+We welcome contributions!
+
+- Fork the repo
+- Create a new branch (`feature/new-feature`)
+- Submit a Pull Request 🚀
+
+For major changes, open an issue first to discuss what you'd like to change.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.  
+Feel free to use and modify as needed.
+
+---
+
+## ✨ Support & Feedback
+
+- ⭐ **Star the repository** if you found it useful!
+- 🐞 **Report issues** [here](https://github.com/HuzaifaHabib/ng-shimmer-loader/issues)
+- 💬 **Questions?** Open a discussion
+
+---
+
+### 🎉 Happy Coding! 🚀
